@@ -45,7 +45,24 @@ router.post('/api/notes', (req, res) => {
     fs.writeFileSync(dbPath, JSON.stringify(existing), 'utf-8');
 
     res.json(newNotes);
-})
+});
+
+// router.delete('./api/notes/:id', (req, res) => {
+
+//     const notes = getNotes();
+//     const deleteNote = req.params.id;
+
+//     const filtered = notes.filter((note) => note.id !== deleteNote);
+
+//     fs.writeFile(dbPath, JSON.stringify(filtered), function(err){
+//         if(err) {
+//             return console.log(err);
+//         }
+//         res.json(filtered);
+//     })
+
+   
+// })
 
 // it is then exported to be used in other files such as app.js
 module.exports = router;
